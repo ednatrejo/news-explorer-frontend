@@ -1,0 +1,5 @@
+.main {
+  min-height: 496px;
+  display: flex;
+  justify-content: center;
+}
