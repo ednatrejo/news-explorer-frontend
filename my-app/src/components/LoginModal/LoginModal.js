@@ -1,13 +1,13 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useForm } from "../hooks/useForm";
 
 const LoginModal = ({
   handleCloseModal,
-  onClose,
   handleRegisterModal,
   onSubmit,
   isLoading,
+  onClose,
 }) => {
   const { values, handleChange, setValues } = useForm({});
 
@@ -17,8 +17,15 @@ const LoginModal = ({
   };
 
   return (
-    <ModalWithForm title="Sign in" onClose={onClose} onSubmit={handleSubmit}>
-      <div className="modal__input">
+    <ModalWithForm
+      title="Sign in"
+      buttonText="Sign in"
+      altButtonText="Sign up"
+      onClose={onClose}
+      onSubmit={handleSubmit}
+      altButtonOnClick={handleRegisterModal}
+    >
+      <div className="modal__input_container">
         <label>
           Email
           <input
@@ -27,9 +34,9 @@ const LoginModal = ({
             name="email"
             minLength="1"
             maxLength="30"
-            placeholder="Enter Email"
+            placeholder="Enter email"
             value={values.email || ""}
-            required
+            // required
             onChange={handleChange}
           />
         </label>
@@ -41,9 +48,9 @@ const LoginModal = ({
             name="password"
             minLength="8"
             maxLength="30"
-            placeholder="Enter Password"
+            placeholder="Enter password"
             value={values.password || ""}
-            required
+            // required
             onChange={handleChange}
           />
         </label>
