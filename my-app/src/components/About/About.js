@@ -15,7 +15,7 @@ const About = () => {
           <p className="about__text_bio">
             Hello there! I'm Edna Trejo, I'm full stack software engineer
             proficient in JavaScript, HTML, CSS,Node, Express, and React. I
-            transitioned from salesto web development.
+            transitioned from sales to web development.
             <br></br>
             <br></br>
           </p>
