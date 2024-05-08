@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useRef } from "react";
+import "./SuccessModal.css";
 import "../ModalWithForm/ModalWithForm.css";
 
 const SuccessModal = ({ onClose, onSubmit, handleLoginModal }) => {

@@ -8,6 +8,7 @@ import Main from "../Main/Main";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
 import Preloader from "../Preloader/Preloader";
+import NotFound from "../NotFound/NotFound";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import LoginModal from "../LoginModal/LoginModal";

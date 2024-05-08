@@ -38,7 +38,6 @@ const NewsCard = ({ card }) => {
       <div className="card__text">
         <div className="card__text_date-published">{card.published} </div>
         <div className="card__text_name">{card.title} </div>
-        <div className="card__text_content">{card.content}</div>
         <div className="card__text_source">{card.source} </div>
       </div>
     </div>

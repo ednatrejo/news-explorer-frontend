@@ -1,53 +1,37 @@
-import { Link } from "react-router-dom";
-import gitHubLogo from "../../images/icon-github.svg";
-import linkdinLogo from "../../images/icon-linkedin.svg";
 import "./Footer.css";
+import FacebookIcon from "../../images/icon-facebook.svg";
+import GithubIcon from "../../images/icon-github.svg";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer">
-      <p className="footer__copyright">@ 2024 Supersite, powered by News API</p>
-      <nav className="footer__links">
-        <Link to="/" className="footer__link" id="home">
-          <p className="footer__home">Home</p>
-        </Link>
-        <Link
-          to="https://www.tripleten.com"
-          className="footer__link"
-          target="_blank"
-          id="tripleten"
-        >
-          <p className="footer__tripleten">TripleTen</p>
-        </Link>
-        <Link
-          to="https://github.com/ednatrejo"
-          className="footer__link"
-          target="_blank"
-          id="github"
-        >
-          <p className="footer__github">
-            <img
-              src={gitHubLogo}
-              alt="GIThub logo"
-              className="footer__github"
-            />
-          </p>
-        </Link>
-        <Link
-          to="https://www.linkedin.com/in/edna-trejo/"
-          className="footer__link"
-          target="_blank"
-          id="linkedIn"
-        >
-          <p className="footer__linkedIn footer__button">
-            {/* <img
-              src={linkdinLogo}
-              className="footer__linkedIn"
-              alt="LinkedIn logo"
-            /> */}
-          </p>
-        </Link>
-      </nav>
+      <p className="footer__text">
+        &#169; {currentYear} Supersite, Powered by News API{" "}
+      </p>
+
+      <div className="footer__buttons">
+        <button className="footer__button" type="text">
+          Home
+        </button>
+        <button className="footer__button" type="text">
+          TripleTen
+        </button>
+
+        <div className="footer__icons">
+          <img
+            src={GithubIcon}
+            className="footer__icon-button"
+            alt="Github Icon"
+          />
+          <img
+            src={FacebookIcon}
+            className="footer__icon-button"
+            alt="Facebook Icon"
+          />
+        </div>
+      </div>
     </footer>
   );
 };
