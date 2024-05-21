@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "./ModalWithForm.css";
 
 const ModalWithForm = ({
@@ -9,25 +8,11 @@ const ModalWithForm = ({
   title,
   onSubmit,
   altButtonText,
-  altButtonOnClick,
+  isDisabled,
+  handleAltClick,
+  handleOverlay,
   ...props
 }) => {
-  useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
-    };
-    document.addEventListener("keydown", handleEscape);
-    return () => document.removeEventListener("keydown", handleEscape);
-  }, [onClose]);
-
-  const handleOverlay = (e) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
   return (
     <div className={`modal modal_type_${name}`} onClick={handleOverlay}>
       <div className="modal__container">
@@ -39,15 +24,23 @@ const ModalWithForm = ({
         <form className="modal__form" onSubmit={onSubmit}>
           <h3 className="modal__title">{title}</h3>
           {children}
-          <button type="submit" className="modal__button">
+
+          <button
+            type="submit"
+            disabled={isDisabled}
+            className={`modal__button ${
+              isDisabled === true ? "modal__button-disabled" : ""
+            }`}
+          >
             {buttonText}
           </button>
-          <div className="modal__alt_container">
+
+          <div className="modal__alt-container">
             <p>or</p>
             <button
-              className="modal__alt_button"
+              className="modal__alt-button"
               type="button"
-              onClick={altButtonOnClick}
+              onClick={handleAltClick}
             >
               {altButtonText}
             </button>

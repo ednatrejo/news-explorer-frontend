@@ -1,45 +1,50 @@
-import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useForm } from "../hooks/useForm";
+import { useFormWithValidation } from "../hooks/useForm";
 
 const RegisterModal = ({
-  handleCloseModal,
-  handleLoginModal,
-  handleSuccessModal,
-  onSubmit,
+  handleRegistration,
+  handleAltClick,
+  serverError,
   isLoading,
   onClose,
 }) => {
-  const { values, handleChange, setValues } = useForm({});
+  const { values, errors, isValid, handleChange } = useFormWithValidation({
+    email: "",
+    password: "",
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(values);
+    handleRegistration(values);
   };
 
   return (
     <ModalWithForm
       title="Sign up"
-      buttonText="Sign up"
+      buttonText={isLoading ? "Loading..." : "Sign Up"}
       altButtonText="Sign in"
       onClose={onClose}
-      onSubmit={handleSuccessModal}
-      altButtonOnClick={handleLoginModal}
+      onSubmit={handleSubmit}
+      handleAltClick={handleAltClick}
+      isDisabled={!isValid}
     >
-      <div className="modal__input_container">
+      <div className="modal__input-container">
         <label>
           Email
           <input
             className="modal__input"
             type="email"
             name="email"
-            minLength="1"
-            maxLength="30"
+            minLength="4"
+            maxLength="50"
             placeholder="Enter email"
             value={values.email || ""}
-            // required
+            required
             onChange={handleChange}
           />
+          <span className="modal__error">
+            {errors.email} {""}
+          </span>
         </label>
         <label>
           Password
@@ -51,9 +56,10 @@ const RegisterModal = ({
             maxLength="30"
             placeholder="Enter password"
             value={values.password || ""}
-            // required
+            required
             onChange={handleChange}
           />
+          <span className="modal__error">{errors.password}</span>
         </label>
         <label>
           Username
@@ -65,10 +71,14 @@ const RegisterModal = ({
             maxLength="30"
             placeholder="Enter your username"
             value={values.name || ""}
-            //   required
+            required
             onChange={handleChange}
           />
+          <span className="modal__error">{errors.name}</span>
         </label>
+        {serverError && (
+          <span className="modal__error-unavailable">Email is unavailable</span>
+        )}
       </div>
     </ModalWithForm>
   );

@@ -1,44 +1,122 @@
 import "./NewsCard.css";
+import { SavedArticlesContext } from "../../contexts/SavedArticlesContext";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { CurrentPageContext } from "../../contexts/CurrentPageContext";
+import { KeywordContext } from "../../contexts/KeywordContext";
+import { useContext, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
-export const defaultNewsCards = [
-  {
-    _id: 1,
-    title: "news 1",
-    published: "April 27th 2024",
-    source: "Jake Lee",
-    link: "https://unsplash.com/photos/a-body-of-water-with-rocks-in-the-background-Q2cdrO6JdA0",
-  },
-  {
-    _id: 2,
-    title: "news 2",
-    published: "May 25, 2022",
-    source: "Evan Brorby",
-    link: "https://unsplash.com/photos/a-long-exposure-shot-of-the-night-sky-over-the-ocean-hvlibuOZCg0",
-  },
-  {
-    _id: 3,
-    title: "news 3",
-    published: "April 20, 2024",
-    source: "Nat Geo",
-    link: "https://unsplash.com/photos/a-picture-of-a-sunset-over-the-ocean-XkUjmP0d62U ",
-  },
-  {
-    _id: 4,
-    title: "News 3- Hi this is the title of this news card",
-    published: "February 16, 2020",
-    source: "Aron Visuals",
-    link: "https://unsplash.com/photos/full-moon-covered-by-clouds-LryOyGjm1bo",
-  },
-];
+const NewsCard = ({
+  onSignUp,
+  newsData,
+  handleSaveArticle,
+  handleRemoveArticle,
+}) => {
+  const { currentPage, setCurrentPage } = useContext(CurrentPageContext);
+  const { isLoggedIn } = useContext(CurrentUserContext);
+  const { keyword } = useContext(KeywordContext);
+  const { savedArticles } = useContext(SavedArticlesContext);
+  const location = useLocation();
+  const [isHovered, setIsHovered] = useState(false);
 
-const NewsCard = ({ card }) => {
+  useEffect(() => {
+    setCurrentPage(location.pathname);
+  }, [location.pathname, setCurrentPage]);
+
+  const formattedDate = new Date(
+    newsData.publishedAt || newsData.date
+  ).toLocaleString("default", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+
+  const handleBookmarkClick = () => {
+    const token = localStorage.getItem("jwt");
+    handleSaveArticle({ newsData, keyword, token });
+  };
+
+  const handleRemoveClick = () => {
+    const token = localStorage.getItem("jwt");
+    handleRemoveArticle({ newsData, token });
+  };
+
   return (
-    <div className="card_container">
-      <img src={card.link} className="card_image" />
+    <div className="card__container">
+      {currentPage === "/saved-news" && (
+        <>
+          <div className="card__keyword">{newsData.keyword}</div>
+
+          <div
+            className={`card__popup-text ${
+              isHovered ? "" : "card__popup-text_hidden"
+            }`}
+          >
+            Remove from saved
+          </div>
+          <button
+            className="card__button-delete"
+            onClick={handleRemoveClick}
+            onMouseEnter={() => {
+              setIsHovered(true);
+            }}
+            onMouseLeave={() => {
+              setIsHovered(false);
+            }}
+          />
+        </>
+      )}
+
+      {isLoggedIn && currentPage === "/" ? (
+        <button
+          className={`card__button-bookmark ${
+            savedArticles.some(
+              (savedArticle) => savedArticle.link === newsData.url
+            )
+              ? "card__button-bookmark_marked"
+              : ""
+          }`}
+          onClick={handleBookmarkClick}
+        />
+      ) : (
+        ""
+      )}
+      {!isLoggedIn && (
+        <>
+          <div
+            className={`card__popup-text ${
+              isHovered ? "" : "card__popup-text_hidden"
+            }`}
+          >
+            Sign in to save articles
+          </div>
+          <button
+            className="card__button-bookmark"
+            onClick={onSignUp}
+            onMouseEnter={() => {
+              setIsHovered(true);
+            }}
+            onMouseLeave={() => {
+              setIsHovered(false);
+            }}
+          />
+        </>
+      )}
+
+      <img
+        src={newsData.image || newsData.urlToImage}
+        alt={newsData.link || newsData.url}
+        className="card__image"
+      />
       <div className="card__text">
-        <div className="card__text_date-published">{card.published} </div>
-        <div className="card__text_name">{card.title} </div>
-        <div className="card__text_source">{card.source} </div>
+        <p className="card__date-published">{formattedDate} </p>
+        <h3 className="card__title">{newsData.title} </h3>
+        <p className="card__content">{newsData.text || newsData.description}</p>
+        {newsData.source && (
+          <p className="card__source">
+            {newsData.source.name || newsData.source}
+          </p>
+        )}
       </div>
     </div>
   );

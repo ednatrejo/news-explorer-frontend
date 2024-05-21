@@ -1,6 +1,7 @@
 import "./Footer.css";
-import FacebookIcon from "../../images/icon-facebook.svg";
+import LinkedinIcon from "../../images/icon-linkedin.svg";
 import GithubIcon from "../../images/icon-github.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,25 +12,46 @@ const Footer = () => {
         &#169; {currentYear} Supersite, Powered by News API{" "}
       </p>
 
-      <div className="footer__buttons">
-        <button className="footer__button" type="text">
-          Home
-        </button>
-        <button className="footer__button" type="text">
-          TripleTen
-        </button>
+      <div className="footer__links">
+        <div className="footer__buttons">
+          <Link to="/">
+            <button className="footer__button" type="text">
+              Home
+            </button>
+          </Link>
+          <a
+            className="footer__button"
+            href="https://www.tripleten.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            TripleTen
+          </a>
+        </div>
 
         <div className="footer__icons">
-          <img
-            src={GithubIcon}
-            className="footer__icon-button"
-            alt="Github Icon"
-          />
-          <img
-            src={FacebookIcon}
-            className="footer__icon-button"
-            alt="Facebook Icon"
-          />
+          <a
+            href="https://github.com/ednatrejo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={GithubIcon}
+              className="footer__icon-button"
+              alt="Github Icon"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/edna-trejo/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={LinkedinIcon}
+              className="footer__icon-button"
+              alt="Facebook Icon"
+            />
+          </a>
         </div>
       </div>
     </footer>
