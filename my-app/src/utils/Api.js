@@ -1,9 +1,7 @@
 import { processServerResponse } from "./utils";
 
 export const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? ""
-    : "http://localhost:3001";
+  process.env.NODE_ENV === "production" ? "" : "http://localhost:3001";
 
 export const getSavedArticles = () => {
   const token = localStorage.getItem("jwt");

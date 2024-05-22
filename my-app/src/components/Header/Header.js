@@ -5,7 +5,7 @@ import headerLogoBlack from "../../images/NewsExplorerBlack.svg";
 import logoutWhite from "../../images/logout-white.svg";
 import logoutBlack from "../../images/logout-black.svg";
 import { NavLink } from "react-router-dom";
-import { CurrentPageContext } from "../../contexts/CurrentPageContext.js";
+import { CurrentPageContext } from "../../contexts/CurrentPageContext";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { MobileContext } from "../../contexts/MobileContext";
 import { useContext } from "react";
