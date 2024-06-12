@@ -10,7 +10,7 @@ import { registration, checkToken, authorization } from "../../utils/auth";
 import {
   getSavedArticles,
   addSavedArticle,
-  removeSavedArticle,
+removeSavedArticle,
 } from "../../utils/Api";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
