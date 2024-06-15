@@ -27,10 +27,11 @@
 }
 
 .about__text-author {
-  font-family: "Roboto-slab", Arial, sans-serif;
+  font-family: "Roboto Slab", Arial, sans-serif;
   font-size: 40px;
-  line-height: 46px;
   font-weight: 400;
+  line-height: 46px;
+  text-align: left;
 }
 
 .about__text-bio {
