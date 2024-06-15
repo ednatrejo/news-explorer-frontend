@@ -134,7 +134,41 @@
   color: #b6bcbf;
 }
 
+@media screen and (max-width: 768px) {
+  .card__keyword {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .card__container {
+    width: 224px;
+    height: 420px;
+    /* margin-top: 302px; */
+    margin-left: 40px;
+    gap: 0px;
+    opacity: 0px;
+    background: #ffffff;
+  }
+  .card__image {
+    width: 224px;
+    height: 150px;
+    top: 302px;
+    left: 40px;
+    gap: 0px;
+    opacity: 0px;
+  }
+}
 @media screen and (max-width: 1023px) {
+  .card__keyword {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+  }
   .card__container {
     border-radius: 14px;
     width: 224px;

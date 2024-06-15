@@ -235,8 +235,10 @@
   }
 
   .header__savednews {
-    padding: 0 16px;
-    min-height: 56px;
+    width: 320px;
+    height: 56px;
+    gap: 0px;
+    opacity: 0px;
   }
 
   .header__savednews-menu-button {
