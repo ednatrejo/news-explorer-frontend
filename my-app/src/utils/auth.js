@@ -2,7 +2,7 @@ import { baseUrl } from "./Api";
 import { processServerResponse } from "./utils";
 
 // signup for registration
-export const registration = ({ email, password, name }) => {
+/*export const registration = ({ email, password, name }) => {
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
@@ -10,7 +10,7 @@ export const registration = ({ email, password, name }) => {
     },
     body: JSON.stringify({ email, password, name }),
   }).then(processServerResponse);
-};
+}; */
 
 /*
 
@@ -36,6 +36,7 @@ export const checkToken = (token) => {
   }).then(processServerResponse);
 };
 */
+//-----------Mock Server-------//
 export const checkToken = (token) => {
   return new Promise((resolve, reject) => {
     resolve({
@@ -46,6 +47,14 @@ export const checkToken = (token) => {
 
 export const authorization = (email, password) => {
   return new Promise((resolve, reject) => {
-    resolve({ token: "a fake token" });
+    resolve({ token: "a fake token " });
+  });
+};
+
+export const registration = (email, password, name) => {
+  return new Promise((resolve, reject) => {
+    resolve({
+      data: { name: "fake user", email: "fake@example.com", id: "fake-id" },
+    });
   });
 };
