@@ -1,8 +1,11 @@
 .page {
+  min-height: 1280px;
+  max-width: 1440px;
   background-image: url("../../images/BackGroundImage.jpg");
+  background-position: top;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  background-size: inherit;
+  margin: 0 auto;
 }
 
 .no-bg {

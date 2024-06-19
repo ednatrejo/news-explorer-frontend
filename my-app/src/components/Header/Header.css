@@ -68,8 +68,8 @@
 }
 
 .header__button-home {
-  width: 68px;
-  height: 76px;
+  /* width: 68px;
+  height: 76px; */
   border: none;
   background-color: transparent;
   display: flex;
@@ -78,6 +78,13 @@
   cursor: pointer;
   text-decoration: none;
   color: white;
+
+  width: 49px;
+  height: 24px;
+  top: 30px;
+  left: 921px;
+  gap: 0px;
+  opacity: 0px;
 }
 
 .header__button-saved-articles {
