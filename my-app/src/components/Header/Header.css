@@ -24,13 +24,19 @@
 .header__menu-open {
   background-color: #1a1b22;
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   z-index: 1;
   width: 100%;
   box-sizing: border-box;
 }
-
+.header__logo {
+  margin-top: 10px;
+  left: 104px;
+  gap: 0px;
+  opacity: 0px;
+  display: flex;
+}
 .header__savednews {
   background-color: white;
   display: flex;
@@ -45,7 +51,7 @@
 
 .header__savednews-open {
   position: fixed;
-  top: 0;
+  top: 10;
   left: 0;
   z-index: 1;
   width: 100%;
@@ -68,8 +74,8 @@
 }
 
 .header__button-home {
-  /* width: 68px;
-  height: 76px; */
+  width: 78px;
+  height: 75px;
   border: none;
   background-color: transparent;
   display: flex;
@@ -78,13 +84,8 @@
   cursor: pointer;
   text-decoration: none;
   color: white;
-
-  width: 49px;
-  height: 24px;
-  top: 30px;
-  left: 921px;
-  gap: 0px;
-  opacity: 0px;
+  margin-top: 3px;
+  margin-left: 665px;
 }
 
 .header__button-saved-articles {
@@ -142,6 +143,14 @@
   gap: 20px;
   color: white;
   cursor: pointer;
+
+  width: 112px;
+  height: 48px;
+  margin-top: 11px;
+  margin-left: -30px;
+  gap: 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
 }
 
 .header__username {

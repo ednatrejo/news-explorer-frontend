@@ -18,17 +18,19 @@
   border-radius: 50%;
   width: 464px;
   height: 464px;
+  margin-left: -108px;
 
   gap: 0px;
   opacity: 0px;
 }
 
 .about__text {
-  margin-left: 56px;
+  margin-left: 52px;
   max-width: 600px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin-bottom: 13px;
 }
 
 .about__text-author {
