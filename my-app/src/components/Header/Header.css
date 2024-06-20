@@ -37,7 +37,7 @@
   opacity: 0px;
   display: flex;
 }
-.header__savednews {
+.header_page_saved-news {
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -85,7 +85,7 @@
   text-decoration: none;
   color: white;
   margin-top: 3px;
-  margin-left: 665px;
+  margin-left: auto;
 }
 
 .header__button-saved-articles {

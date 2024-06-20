@@ -2,3 +2,10 @@
   /* padding: 62px 102px;
   min-height: 294px;*/
 }
+
+@media screen and (min-width: 300px) and (max-width: 399px) {
+  .saved-news__section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

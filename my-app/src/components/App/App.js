@@ -136,10 +136,10 @@ function App() {
         setIsLoading(false);
       });
 
-    // const data = { name: "fake user" };
-    // setCurrentUser(data);
-    // setIsLoggedIn(true);
-    // setIsLoading(false);
+    /*const data = { name: "fake user" };
+    setCurrentUser(data);
+    setIsLoggedIn(true);
+    setIsLoading(false);*/
   };
 
   //Callback function to register new user
