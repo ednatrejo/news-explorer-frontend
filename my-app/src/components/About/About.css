@@ -13,24 +13,17 @@
 }
 
 .about__avatar-image {
-  /* width: 464px;
-  height: 464px;*/
-  border-radius: 50%;
   width: 464px;
   height: 464px;
-  margin-left: -108px;
-
-  gap: 0px;
-  opacity: 0px;
+  border-radius: 50%;
 }
 
 .about__text {
-  margin-left: 52px;
+  margin-left: 56px;
   max-width: 600px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-bottom: 13px;
 }
 
 .about__text-author {
