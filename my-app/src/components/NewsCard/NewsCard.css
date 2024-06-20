@@ -1,4 +1,4 @@
-.card__container {
+.card {
   background-color: white;
   border-radius: 25px;
   overflow: hidden;
@@ -135,7 +135,7 @@
 }
 
 @media screen and (max-width: 1023px) {
-  .card__container {
+  .card {
     border-radius: 14px;
     width: 224px;
     min-height: 420px;
@@ -185,7 +185,7 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 535px) {
-  .card__container {
+  .card {
     width: 100%;
   }
 

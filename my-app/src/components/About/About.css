@@ -16,6 +16,7 @@
   width: 464px;
   height: 464px;
   border-radius: 50%;
+  margin-left: -108px;
 }
 
 .about__text {
@@ -24,6 +25,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin-bottom: 13px;
 }
 
 .about__text-author {
