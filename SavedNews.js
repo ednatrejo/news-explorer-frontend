@@ -1,10 +1,10 @@
 import "./SavedNews.css";
-import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
-import SavedNewsCardList from "../SavedNewsCardList/SavedNewsCardList";
+import SavedNewsHeader from "./my-app/src/components/SavedNewsHeader/SavedNewsHeader";
+import SavedNewsCardList from "./my-app/src/components/SavedNewsCardList/SavedNewsCardList";
 
 const SavedNews = ({ handleRemoveArticle }) => {
   return (
-    <section className="saved__news">
+    <section className="saved">
       <SavedNewsHeader />
       <SavedNewsCardList handleRemoveArticle={handleRemoveArticle} />
     </section>

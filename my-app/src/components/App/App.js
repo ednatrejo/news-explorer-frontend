@@ -19,7 +19,7 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
-import SavedNews from "../SavedNews/SavedNews";
+import SavedNews from "../../../../SavedNews";
 import SuccessModal from "../SuccessModal/SuccessModal";
 
 import { CurrentPageContext } from "../../contexts/CurrentPageContext";
