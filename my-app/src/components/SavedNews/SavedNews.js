@@ -1,6 +1,6 @@
 import "./SavedNews.css";
-import SavedNewsHeader from "./my-app/src/components/SavedNewsHeader/SavedNewsHeader";
-import SavedNewsCardList from "./my-app/src/components/SavedNewsCardList/SavedNewsCardList";
+import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
+import SavedNewsCardList from "../SavedNewsCardList/SavedNewsCardList";
 
 const SavedNews = ({ handleRemoveArticle }) => {
   return (
