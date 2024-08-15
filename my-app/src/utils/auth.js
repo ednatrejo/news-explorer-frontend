@@ -1,8 +1,8 @@
 import { baseUrl } from "./Api";
 import { processServerResponse } from "./utils";
 
-// signup for registration
-/*export const registration = ({ email, password, name }) => {
+//signup for registration
+export const registration = ({ email, password, name }) => {
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
@@ -10,9 +10,7 @@ import { processServerResponse } from "./utils";
     },
     body: JSON.stringify({ email, password, name }),
   }).then(processServerResponse);
-}; */
-
-/*
+};
 
 // signin for user authorization
 export const authorization = ({ email, password }) => {
@@ -34,27 +32,4 @@ export const checkToken = (token) => {
       authorization: `Bearer ${token}`,
     },
   }).then(processServerResponse);
-};
-*/
-//-----------Mock Server-------//
-export const checkToken = (token) => {
-  return new Promise((resolve, reject) => {
-    resolve({
-      data: { name: "fake user", email: "fake@example.com", id: "fake-id" },
-    });
-  });
-};
-
-export const authorization = (email, password) => {
-  return new Promise((resolve, reject) => {
-    resolve({ token: "a fake token " });
-  });
-};
-
-export const registration = (email, password, name) => {
-  return new Promise((resolve, reject) => {
-    resolve({
-      data: { name: "fake user", email: "fake@example.com", id: "fake-id" },
-    });
-  });
 };
