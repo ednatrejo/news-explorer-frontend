@@ -42,7 +42,7 @@ const NewsCard = ({
   };
 
   return (
-    <div className="card">
+    <div className="card__container">
       {currentPage === "/saved-news" && (
         <>
           <div className="card__keyword">{newsData.keyword}</div>
