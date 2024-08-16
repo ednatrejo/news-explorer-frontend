@@ -69,7 +69,7 @@ const Header = ({ onLogin, onLogout }) => {
     </header>
   ) : isLoggedIn && currentPage === "/saved-news" ? (
     <header
-      className={`header header_page_saved-news ${
+      className={`header__savednews ${
         mobileMenuOpen ? "header__savednews-open" : ""
       }`}
     >
